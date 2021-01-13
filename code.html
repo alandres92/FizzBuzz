@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/prism.css">  
+    <link rel="stylesheet" href="/css/fizzbuzz.css">
   </head>
   <body>
       <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #ff993b;">
@@ -43,22 +44,18 @@
                 <div>
                     <pre>
                         <code class="language-javascript line-numbers">
-                        function testFB() {
-                            let output = [];
-                            let headTemplate = document.getElementById('template-header');
-                            let rowTemplate = document.getElementById('template-row-items');
-                        
-                           
+                        //Traditional Solve for Fizz Buzz using a loop
+                        function FizzBuzzA(value1, value2){
                             let returnValue = "";
-                            for(let loop =1;loop<=100;loop++){
-                                if(loop%input1==0 && loop%input2==0){
+                            for(let loop = 1;loop<=100;loop++){
+                                if(loop%value1==0 && loop%value2==0){
                                     returnValue += 'FizzBuzz ';
                                 }
-                                else if (loop%input1 == 0){
+                                else if (loop%value1 ==0){
                                     returnValue += 'Fizz ';
                                 }
-                                else if (loop%input2 ==0) {
-                                    returnValue += 'Buzz ';
+                                else if (loop%value2 ==0){
+                                    returnValue += 'Buzz '
                                 }
                                 else{
                                     returnValue += loop + ' ';
@@ -66,26 +63,78 @@
                             }
                             return returnValue;
                         }
-                        
-                        //Display results
-                        
-                        
-                        
-                        //table results
+                        //2nd Method
+                        function FizzBuzzB(value1,value2){
+                            let returnValue = "";
+                            let Fizz = false;
+                            let Buzz = false;
+                            for(let loop = 1;loop<=100;loop++){
+                                Fizz = loop%value1 == 0;
+                                Buzz = loop%value2 == 0;
+                                switch(true){
+                                    case Fizz && Buzz :{
+                                        returnValue += 'FizzBuzz ';
+                                        break;
+                                    }
+                                    case Fizz :{
+                                        returnValue += 'Fizz ';
+                                        break;
+                                    }
+                                    case Buzz :{
+                                        returnValue += 'Buzz ';
+                                        break;
+                                    }
+                                    default : {
+                                        returnValue += loop + ' ';
+                                        break;
+                                    }
+                                }
+                            }
+                            return returnValue
+                        }
+                        //3rd Method "Non Traditional Approach"
+                        function FizzBuzzC(value1,value2){
+                            let returnValue = "";
+                            for (let loop =1;loop<=100;loop++){
+                                returnValue += ((loop%value1==0 ? 'Fizz' : '') + (loop%value2==0 ? 'Buzz' : '') || loop ) + ' ';
+                            }
+                            return returnValue;
+                        }
+
+                        //The FizzBuzz Meta Strategy
+                        function FizzBuzzD(value1, value2){
+                            let returnArray= [];
+                            for(let loop = 1; loop<=100;loop++){
+                                returnArray[loop] = ((loop%value1==0 ? 'Fizz' : '') + (loop%value2==0 ? 'Buzz' : '') || loop );
+                            }
+                            return returnArray;
+                        }
+
+
+                        //Call and use our FizzBuzz
+                        function buzzIt(){
+                            let output="";
+                            let val1 = document.getElementById('Fizzvalue').value;
+                            let val2 = document.getElementById('Buzzvalue').value;
+                            output = FizzBuzzD(val1,val2);
+                            document.getElementById('results').innerHTML = output;
+                        }
+
+                        //Call and use our Template
                         function buzzItTemplate(){
                             let output = [];
                             let headTemplate = document.getElementById('template-header');
                             let rowTemplate = document.getElementById('template-row-items');
-                            
+
                             let templateHTML = rowTemplate.innerHTML;
                             let resultsHTML = headTemplate.innerHTML;
-                        
+
                             //get the values the user entered
-                            let val1 = document.getElementById('input1').value;
-                            let val2 = document.getElementById('input2').value;
-                        
-                            output = testFB(val1,val2);
-                            for(loop=1;loop < output.length; loop+=5){
+                            let val1 = document.getElementById('Fizzvalue').value;
+                            let val2 = document.getElementById('Buzzvalue').value;
+                            //call out FizzBuzz function
+                            output = FizzBuzzD(val1,val2);
+                            for(loop=1; loop < output.length; loop+=5){
                                 resultsHTML += templateHTML.replace('{{val1}}', output[loop])
                                                             .replace('{{val2}}', output[loop+1])
                                                             .replace('{{val3}}', output[loop+2])
@@ -93,8 +142,9 @@
                                                             .replace('{{val5}}', output[loop+4]);
                             }
                             document.getElementById('results').innerHTML = resultsHTML;
-                        
-                        });
+
+
+                        }
                         
                         </code>
                     </pre>
