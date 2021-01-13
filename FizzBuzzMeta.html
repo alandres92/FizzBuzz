@@ -11,7 +11,7 @@
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="solve.html">Solve <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Solve <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="code.html">Code</a>
@@ -28,7 +28,7 @@
               
           </div>
       </nav>
-    <title>FIZZ BUZZ</title>
+    <title>FizzBuzz Meta Strategy</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -36,55 +36,42 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/fizzbuzz.css">
-    
+    <div class="rev-style">
   </head>
   <body>
-    <img src="img/fizzbuzz.jpg" class="responsive">
+    <img src="img/fizzbuzz.png" class="responsive">
     <div class="rev-style">
-        <h3>This Program Tests FizzBuzz</h3>
-            <label><span>First Number: </span><input id="input1" type="number" ></label>
-            <label><span>Second Number: </span><input id="input2" type="number" ></label>
-            <label><span></span><input type="submit" onclick="buzzItTemplate()" value="Start Buzzing!"></label>
-            <!--begin table-->
+        <div class="rev=style-headingB">Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.</div>
+        <br>
+            <label class="form-group"><span>Enter a number:</span><input id="Fizzvalue" type="number"  name="fizz" value="3"></label><br>
+            <label class="form-group"><span>Enter another number:</span><input id="Buzzvalue" type="number" name="buzz" value="5"></label>
+            <label><span></span><input type="submit" onclick="buzzItTemplate()" value="Buzz It!"></label>
             <div style="overflow-x: auto;">
                 <table id="results">
-                    <!--Generated Results here-->
+                    <!--Generated Results Go Here-->
                 </table>
-
             </div>
-            <!--Templates for displaying output-->
+            <!--Templates for displaying the output-->
             <script id="template-header" type="text/template">
                 <thead>
-                    <tr><th colspan="5"> Fizz Buzz Results</th></tr>
+                    <tr><th colspan="5"> Results For Fizz Buzz</th></tr>
                 </thead>
             </script>
             <script id="template-row-items" type="text/template">
                 <tr>
                     <td>{{val1}}</td><td>{{val2}}</td><td>{{val3}}</td><td>{{val4}}</td><td>{{val5}}</td>
+
                 </tr>
 
             </script>
 
 
 
-
-            <hr /> <!--Start here if table fails-->
-            
-        </div>
-
-    </div>
-  
-      
-
-
-        
-
-    <!-- Optional JavaScript -->
+     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="js/fizzbuzzA.js"></script>
-    
+    <script src="js/fizzbuzz.js"></script>
   </body>
 </html>
