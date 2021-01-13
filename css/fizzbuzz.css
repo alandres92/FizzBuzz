@@ -1,3 +1,8 @@
+  
+body {
+	background-image: linear-gradient(#121212, #181818,#252525,#404040);
+}
+
 .responsive {
 	max-width: 100%;
 	height: auto;
@@ -10,7 +15,7 @@ img{
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
 	width: 100%;
-	background-color: gainsboro; 
+	background-color: #404040; 
   }
   
 #results td, #results th {
@@ -18,9 +23,9 @@ img{
 	padding: 8px;
   }
   
-#results tr:nth-child(even){background-color: #f2f2f2;}
+#results tr:nth-child(even){background-color: #252525;}
   
-#results tr:hover {background-color: #ddd;}
+#results tr:hover {background-color: #808080;}
   
 #results th {
 	padding-top: 12px;
@@ -33,7 +38,8 @@ img{
 .rev-style{
 	max-width: 700px;
 	padding: 20px 12px 10px 20px;
-	font: 18px Arial, Helvetica, sans-serif;
+    font: 18px Arial, Helvetica, sans-serif;
+    color:#f7941d
 }
 .rev-style-heading{
 	font-weight: bold;
@@ -41,14 +47,16 @@ img{
 	border-bottom: 2px solid #ddd;
 	margin-bottom: 20px;
 	font-size: 20px;
-	padding-bottom: 3px;
+    padding-bottom: 3px;
+    
 }
 .rev-style-headingB{
 	font-style: italic;
 	border-bottom: 2px solid #ddd;
 	margin-bottom: 20px;
 	font-size: 18px;
-	padding-bottom: 3px;
+    padding-bottom: 3px;
+    
 }
 
 .rev-style label{
@@ -104,7 +112,7 @@ img{
 	border: none;
 	padding: 8px 15px 8px 15px;
 	background: #f7941d;
-	color: #fff;
+	color: #ffff;
 	box-shadow: 1px 1px 4px #DADADA;
 	-moz-box-shadow: 1px 1px 4px #DADADA;
 	-webkit-box-shadow: 1px 1px 4px #DADADA;
