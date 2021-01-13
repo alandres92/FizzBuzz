@@ -28,7 +28,7 @@
               
           </div>
       </nav>
-    <title>Title</title>
+    <title>FIZZ BUZZ</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -36,26 +36,50 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/fizzbuzz.css">
+    
   </head>
-  
   <body>
+    <img src="img/fizzbuzz.jpg" class="responsive">
+    <div class="rev-style">
+        <h3>This Program Tests FizzBuzz</h3>
+            <label><span>First Number: </span><input id="input1" type="number" ></label>
+            <label><span>Second Number: </span><input id="input2" type="number" ></label>
+            <label><span></span><input type="submit" onclick="buzzItTemplate()" value="Start Buzzing!"></label>
+            <!--begin table-->
+            <div style="overflow-x: auto;">
+                <table id="results">
+                    <!--Generated Results here-->
+                </table>
+
+            </div>
+            <!--Templates for displaying output-->
+            <script id="template-header" type="text/template">
+                <thead>
+                    <tr><th colspan="5"> Fizz Buzz Results</th></tr>
+                </thead>
+            </script>
+            <script id="template-row-items" type="text/template">
+                <tr>
+                    <td>{{val1}}</td><td>{{val2}}</td><td>{{val3}}</td><td>{{val4}}</td><td>{{val5}}</td>
+                </tr>
+
+            </script>
+
+
+
+
+            <hr /> <!--Start here if table fails-->
+            <label><span>Results:</span></label>
+            
+            <p id="results"></p>
+            <hr />
+        </div>
+
+    </div>
+  
       
 
-<div class="container pt-5">
-    <div class="row">
-        <div class="col">
-            <input class="form-control" id="input1" placeholder="Enter a Number" type="number" />
 
-        </div>
-        <div class="col form-group">
-            <input class="form-control" id="input2" value="12"/>
-    </div>
-</div>
-<div class="row"></div>
-    <div class="col-6 offset-3 form-group">
-        <button class="btn btn-outline-danger btnWide" >Click Me</button>
-    </div>
-</div>
         
 
     <!-- Optional JavaScript -->
@@ -63,6 +87,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="js/fizzbuzz.js"></script>
+    <script src="js/fizzbuzzA.js"></script>
+    
   </body>
 </html>
